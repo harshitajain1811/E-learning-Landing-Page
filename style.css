@@ -1,0 +1,626 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 85px; /* adjust based on your navbar height */
+  scroll-behavior: smooth; /* for smooth scrolling effect */
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  font-family: "Comfortaa", "sans-serif";
+  background-color: #f9fafb;
+  color: #111827;
+  touch-action: none; /* prevents scrolling on body while modal is open */
+  padding: 0;
+  overflow-x: clip;
+}
+
+/* Header section */
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/img/header_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  color: white;
+}
+
+/* Navbar styles */
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  height: 85px;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-weight: 500;
+    align-items: center;
+  }
+
+  .nav-links a {
+  text-decoration: none;
+  color: white
+}
+
+.nav-links a:hover {
+  color: #f72585;
+}
+
+.buttons {
+  background-color: #e74c3c;
+  background-image: linear-gradient(to right, #b5179e 0%, #f72585 100%);
+  border: none;
+  padding: 5px 20px;
+  border-radius: 20px;
+  color: white;
+  font-family: "Poppins", "sans-serif";
+  font-size: 15px;
+  transition: linear 0.4s ease;
+}
+
+/* Login and Sigup forms */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* dim background */
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  width: 30%;
+  position: relative;
+  font-family: "Poppins", "sanas-serif";
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-actions {
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+.form-actions a {
+  font-size: 12px;
+  color: #b5179e;
+  text-decoration: none;
+}
+
+.modal button {
+  width: 100%;
+  background-color: #e74c3c;
+  background-image: linear-gradient(to right, #b5179e 0%, #f72585 100%);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.modal button:hover {
+  background: #f72585;
+}
+
+.toggle-form {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.toggle-form a {
+  color: #b5179e;
+  text-decoration: none;
+}
+
+.social-buttons {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.social-buttons p {
+  margin: 10px 0 5px;
+  font-size: 14px;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+}
+
+.modal .google-btn {
+  background-color: #db4437;
+  background-image: none;
+}
+
+.modal .google-btn:hover {
+  background-color: #b63428;
+}
+
+.modal .apple-btn {
+  background-color: #333;
+  background-image: none;
+}
+
+.modal .apple-btn:hover {
+  background-color: #000;
+}
+
+.social-button i {
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  height: 600px;
+}
+
+.hero .headline {
+  font-size: 40px;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.hero .sub-headline {
+  font-weight: 400;
+}
+
+.hero button {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.buttons:hover {
+  background-image: none;
+  background-color: #f72584da !important;
+  cursor: pointer;
+}
+
+/* About and features section */
+#aboutfeatures {
+  background-color: #1b263b;
+  color: rgba(255, 255, 255, 0.873);
+  padding-bottom: 20px;
+}
+
+.about {
+  text-align: center;
+  padding: 20px;
+  justify-items: center;
+}
+
+.about h2 {
+  margin-bottom: 5px;
+}
+
+.about p {
+  width: 70%;
+  font-family: "Poppins", "sans-serif";
+  color: #778da9;
+}
+
+/* features part */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}
+
+.features div {
+  text-align: center;
+  justify-items: center;
+}
+
+.features img {
+  height: 60px;
+  width: 60px;
+}
+
+.features h3,
+.features p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 70%;
+}
+
+.features p {
+  font-family: "Poppins", "sans-serif";
+  color: #778da9;
+}
+
+/* Roadmap section */
+.courses {
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.course-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px 30px;
+  margin-top: 40px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+  overflow: hidden;
+  width: 100%;
+  max-width: 370px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.course-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.course-content {
+  padding: 20px;
+  font-family: "Poppins", "sans-serif";
+}
+
+.course-content h3 {
+  font-weight: 400;
+}
+
+.course-content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Testimonial section */
+.slider {
+  padding: 50px 20px;
+  position: relative;
+  overflow: hidden;
+  justify-items: center;
+  background-color: #e0e1dd;
+}
+
+.testimonial {
+  display: none;
+  text-align: center;
+  padding: 30px;
+  background: #f9fafb;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  padding: 60px 30px;
+  font-family: "Poppins", "sans-serif";
+}
+
+.testimonial.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  margin: 0 5px;
+  background-color: #778da9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+/* Newsletter section */
+.newsletter {
+  text-align: center;
+  padding: 30px;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 30%;
+  border-radius: 5px;
+  border: 2px solid #0d1b2a;
+  margin-bottom: 10px;
+}
+
+.newsletter input:focus {
+  outline: none;
+  border-color: #778da9;
+ }
+
+.newsletter button {
+  padding: 10px;
+  border-radius: 15px;
+  margin-left: 7px;
+}
+
+/* Footer section */
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #0d1b2a;
+  align-items: center;
+  color: #e0e1dd;
+  flex-direction: column;
+  padding: 20px 0px;
+  font-family: "Poppins", "sans-serif";
+  min-height: 20vh;
+}
+
+footer div {
+  display: flex;
+  width: 10%;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 20px 0px;
+}
+
+footer div a {
+  color: #e0e1dd;
+}
+
+/* Responsive design*/
+@media only screen and (max-width: 1024px) {
+  .modal {
+    width: 40%;
+  }
+
+  .about p, .features h3, .features p, .testimonial {
+    width: 85%;
+  }
+
+  footer div {
+    width: 15%;
+  }
+
+  .hero button {
+    font-size: 17px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+  color: white;
+}
+
+.nav-links {
+  display: none !important;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  background-color: white;
+  width: 100%;
+  padding: 0px 0px 10px 10px;
+}
+
+/* Show menu when toggled */
+.nav-links.active {
+  display: flex !important;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  align-items: start;
+  transition: all 0.5s linear;
+}
+
+.nav-links a{
+  padding: 10px 10px;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+.logo {
+  font-size: 20px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+  .modal {
+    width: 55%;
+  }
+
+  header, .hero {
+    height: 500px;
+    text-align: center;
+  }
+
+  .hero .headline {
+    font-size: 30px;
+  }
+
+  .hero .sub-headline, .nav-links a, .about p, .features p, .course-content p, .testimonial, footer {
+    font-size: small;
+  }
+
+  .hero button, .features h3, .course-content h3, .newsletter button, .nav-links button {
+    font-size: 14px;
+  }
+
+  .about h2, .courses h2, .slider h2, .newsletter h2 {
+    font-size: 20px;
+  }
+
+  .features, .course-grid {
+    flex-wrap: wrap;
+    padding: 10px 0px;
+  }
+
+  .features div, .course-card{
+    width: 45%;
+    max-height: fit-content;
+  }
+
+  .features img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .courses {
+    padding: 30px 20px 0px;
+  }
+
+  .course-card img {
+    height: 40%;
+  }
+  
+  .course-content h3 {
+    margin: 5px 0px;
+  }
+
+  .testimonial {
+    padding: 40px 30px;
+  }
+
+  .newsletter input {
+    width: 70%;
+  }
+
+  footer div {
+    width: 25%;
+  }
+
+}
+@media only screen and (max-width: 500px) {
+  .navbar .container {
+    padding: 30px 40px;
+  }
+
+  .logo {
+    font-size: 16px;
+  }
+
+  .modal, .features div, .course-card{
+    width: 88%;
+  }
+
+  .hero, .newsletter input {
+    max-width: 96%;
+  }
+
+  .hero .headline {
+    font-size: 25px;
+  }
+
+  .hero button, .newsletter button, .nav-links button {
+    font-size: 12px;
+  }
+
+  .features div {
+    margin-bottom: 15px;
+  }
+
+  footer div {
+    width: 50%;
+  }
+}

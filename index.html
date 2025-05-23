@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="shortcut icon" href="img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="img/site.webmanifest" />
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>GrowSpace</title>
+</head>
+<body>
+  <!-- Header (navigation and hero section) -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">GrowSpace</div>
+      <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+      <nav class="nav-links" id="nav-links">
+        <a href="#aboutfeatures">Why Us</a>
+        <a href="#roadmap">Free Roadmap</a>
+        <a href="#testimonial">Testimonials</a>
+        <a href="#contact_us">Contact</a>
+        <button class="buttons" id="openModalBtn">Login/Sign Up</button>
+      </nav>
+    </div>
+
+    <div class = "hero">
+      <div class = "headline">Empower Your Learning Journey</div>
+      <div class = "sub-headline">Unlock your potential with our online courses and expert guidance</div>
+      <div><button class="buttons">Get Started</button></div>
+    </div>
+  </header>
+
+  <!-- Login and signup forms -->
+  <div id="modalOverlay" class="modal-overlay">
+    <div class="modal">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <form id="signup-form">
+        <h2>Sign Up</h2>
+        <p style="font-size: 14px">*Sign Up and start learning your first course for free!</p>
+        <div class="form-group">
+          <label for="name">Full Name*</label>
+          <input type="text" id="name" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact Number*</label>
+          <input type="tel" id="contact" placeholder="1234567890" required>
+        </div>
+        <div class="form-group">
+          <label for="email-signup">Email*</label>
+          <input type="email" id="email-signup" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password-signup">Password*</label>
+          <input type="password" id="password-signup" required>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password*</label>
+          <input type="password" id="confirm-password" required>
+        </div>
+        <button type="submit">Create Account</button>
+        <div class="toggle-form">
+          Already have an account? <a href="#" onclick="toggleForms()">Login</a>
+        </div>
+        <div class="social-buttons">
+          <p>or</p>
+          <button class="social-button google-btn">
+            <i class="fab fa-google"></i> Sign in with Google
+          </button>
+          <button class="social-button apple-btn">
+            <i class="fab fa-apple"></i> Sign in with Apple
+          </button>
+        </div>
+      </form>
+
+      <form id="login-form" class="hidden">
+        <h2>Login</h2>
+        <div class="form-group">
+          <label for="email-login">Email</label>
+          <input type="email" id="email-login" placeholder="email@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="password-login">Password</label>
+          <input type="password" id="password-login" required>
+        </div>
+        <div class="form-actions">
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit">Login</button>
+        <div class="toggle-form">
+          Don't have an account? <a href="#" onclick="toggleForms()">Sign Up</a>
+        </div>
+        <div class="social-buttons">
+          <p>or</p>
+          <button class="social-button google-btn">
+            <i class="fab fa-google"></i> Sign in with Google
+          </button>
+          <button class="social-button apple-btn">
+            <i class="fab fa-apple"></i> Sign in with Apple
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- About and features section -->
+  <section id = "aboutfeatures">
+    <div class = "about">
+      <h2>About Us</h2>
+      <p>
+        We are passionate about making coding accessible to everyone. Our platform offers beginner to advanced courses in popular programming languages like Python, JavaScript, HTML, and more. With interactive lessons, real-time practice, and expert guidance, we help you build skills that matter. Start your coding journey with us today!
+      </p>      
+    </div>
+    <div class = "features">
+      <div>
+        <img src="img/lessons.png" alt="Lessons">
+        <h3>Interactive Lessons</h3>
+        <p>Engage with hands-on coding exercises and real-time feedback. Learn by doing with structured, beginner-friendly modules.</p>
+      </div>
+      <div>
+        <img src="img/expert.png" alt="Expert">
+        <h3>Expert Mentorship</h3>
+        <p>Get guidance from experienced developers and industry experts. Personalized support to help you grow and stay on track.</p>
+      </div>
+      <div>
+        <img src="img/progress.png" alt="Progress">
+        <h3>Progress Tracking</h3>
+        <p>Monitor your learning journey with smart analytics and reports. Stay motivated by tracking milestones and achievements.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap example section -->
+  <section class="courses" id="roadmap">
+    <h2>Master Backend Development From Scratch</h2>
+    <div class="course-grid">
+      <div class="course-card">
+        <img src="/img/level 1.jpg" alt="Understand Server Basics">
+        <div class="course-content">
+          <h3>Understand Server Basics</h3>
+          <p>Learn how the web works, explore HTTP requests, and get familiar with backend logic using Node.js or Python.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="/img/level 2.jpg" alt=">Work With Databases">
+        <div class="course-content">
+          <h3>Work With Databases</h3>
+          <p>Get hands-on with SQL and NoSQL databases like MySQL and MongoDB. Learn CRUD operations and data modeling.</p>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="/img/level 3.jpg" alt="Build & deploy APIs">
+        <div class="course-content">
+          <h3>Build & deploy APIs</h3>
+          <p>Create RESTful APIs, add authentication, and deploy your backend apps to platforms like Render, Heroku, or AWS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial section -->
+  <section id="testimonial" class="slider">
+    <h2>TESTIMONIALS</h2>
+    <div class="testimonial active">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"This platform made learning to code so easy and fun!"</p>
+      <p>– Aarav S., Web Developer Intern</p>       
+    </div>
+    <div class="testimonial">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"The mentors are incredibly supportive and the content is top-notch."</p>
+      <p>– Priya M., Front-End Developer</p>
+    </div>
+    <div class="testimonial">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"I landed my first freelance project within weeks of completing the course!"</p>
+      <p>– Rahul D., Freelance Programmer</p>
+    </div>
+  
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+  
+  <!-- Newsletter form section -->
+  <section class = "newsletter">
+    <h2>Subscribe to our newsletter</h2>
+    <form action="#">
+      <input type="email" placeholder="email@example.com" id="email">
+      <button class="buttons">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Footer Section (Consists of contact information) -->
+  <footer id="contact_us">
+    <p>Contact Info: +91 8564793256</p>
+    <p>Email: growspace@gmail.com</p>
+    <div class="social_media">
+      <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="www.gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="www.instagram.com"><i class="fab fa-instagram"></i></a>
+      <a href="www.whatsapp.com"><i class="fab fa-whatsapp"></i></a>
+    </div>  
+    <p>&copy; 2025 GrowSpace, All Rights Reserved</p>
+  </footer>
+</body>
+<script src="script.js"></script>
+</html>
