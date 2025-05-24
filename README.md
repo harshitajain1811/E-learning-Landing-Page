@@ -1,5 +1,7 @@
 # Landing Page UI/UX Development for Startup "GrowSpace"
 
+Description given by AI-
+
 Project Overview:
 We are launching a new startup called GrowSpace (focused on online learning), and we need a simple, clean landing page developed based on a basic wireframe we will provide.
 The design should feel modern, minimalistic, and mobile-responsive.
